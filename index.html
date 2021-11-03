@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 25%;
+            height: 50px;
+            background-color: skyblue;
+            margin-top: 10px;
+            position: relative;
+        }
+    </style>
+
+</head>
+<body>
+<input type ="number" id="fN"  min="1" max="300">번째 피보나치 수
+
+<input type="button" id = "button1" onclick="cN()" value="계산"/>
+
+<div id = "t"></div>
+
+<script>
+    let pKey = document.querySelector("#t");
+    function cN()
+    {
+        let n = document.querySelector('#fN').value;
+        pKey.innerHTML = fibo(n);
+    }
+    function fibo(num) {
+        if(num < 2)
+            return num;
+        else{
+            return fibo(num-1) + fibo(num-2);
+        }
+    }
+</script>
+
+
+
+</body>
+</html>
