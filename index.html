@@ -8,7 +8,7 @@
 
     <style>
         #t {
-            width: 25%;
+            width: 600px;
             height: 50px;
             background-color: skyblue;
             margin-top: 10px;
@@ -43,7 +43,7 @@
 
 </head>
 <body>
-<input type ="number" id="fN"  min="1" max="300">번째 피보나치 수
+<input type ="number" id="fN"  min="1" max="100">번째 피보나치 수
 
 <input type="button" id = "button1" onclick="cN()" value="계산"/>
 
@@ -65,11 +65,22 @@
         pKey.innerHTML = fibo(n);
     }
     function fibo(num) {
+        let A = [1, 1];
+        let i;
+        let f = 1;
+        let s = 1;
+        let t;
         if(num < 2)
-            return num;
+            return 1;
         else{
-            return fibo(num-1) + fibo(num-2);
+            for(let i = 1; i < num; i++)
+            {
+                t = s+f;
+                f = s;
+                s = t;
+            }
         }
+        return t;
     }
 </script>
 
